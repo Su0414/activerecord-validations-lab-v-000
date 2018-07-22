@@ -7,10 +7,10 @@ class Post < ActiveRecord::Base
   validate :if_clickbaitYN?
 
   CLICKBAIT_STRINGS = [
-    "Won't Believe",
-    "Secret",
-    "Top [0-9]*",
-    "Guess"
+    /Won't Believe/,
+    /Secret/,
+    /Top [0-9]*/,
+    /Guess/
   ]
 
   def if_clickbaitYN?
